@@ -1,0 +1,56 @@
+/*
+ * Design tokens. Every colour, font, radius and shadow used by the app comes from here.
+ * Values are provisional (taken from the palette of the session deck). Replace them with
+ * the Globant UI guidelines; app.css should not need changes.
+ */
+:root {
+  /* Brand */
+  --color-brand: #16a34a;
+  --color-brand-strong: #15803d;
+  --color-brand-soft: #dcfce7;
+  --color-accent: #25ef99;
+
+  /* Neutrals */
+  --color-ink: #0f172a;
+  --color-ink-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-surface: #ffffff;
+  --color-canvas: #f8fafc;
+
+  /* Status (for results and alerts) */
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-danger: #dc2626;
+  --color-info: #0284c7;
+
+  /* Specialty colours (avatars) */
+  --color-spec-cardiology: #e11d48;
+  --color-spec-dermatology: #f59e0b;
+  --color-spec-endocrinology: #8b5cf6;
+  --color-spec-family-medicine: #16a34a;
+  --color-spec-neurology: #6366f1;
+  --color-spec-orthopedics: #0ea5e9;
+  --color-spec-pediatrics: #ec4899;
+
+  /* Type */
+  --font-sans: 'Inter', 'Heebo', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+
+  /* Shape */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-pill: 999px;
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 6%), 0 4px 16px rgb(15 23 42 / 4%);
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+}
