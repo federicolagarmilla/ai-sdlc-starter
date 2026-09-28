@@ -1,0 +1,38 @@
+schema: spec-driven
+
+# Project context: shown to the agent when it creates proposals, specs, designs and tasks.
+context: |
+  Northside Health Patient Portal: a front-end only React 19 + TypeScript + Vite app (no backend).
+  Northside Health is fictional and all data is synthetic (src/data/). Never introduce real patient data.
+  Screens live in src/screens/ and are registered in src/routes.tsx (the navigation bar is built from it).
+  Pure logic (filtering, sorting, date handling) lives in src/domain/ with Vitest unit tests next to it.
+  Styling uses only the CSS variables in src/styles/tokens.css.
+  Accessibility target: WCAG 2.1 AA; status is never conveyed by colour alone.
+  Product requirements are in docs/prd/patient-portal-prd.md (requirement ids FR-xx).
+  Work items come from Jira; project conventions are in AGENTS.md.
+
+# Per-artifact rules.
+rules:
+  proposal:
+    - Reference the Jira key and the PRD requirement ids (FR-xx) the change implements
+    - List what is explicitly out of scope for this change
+    - Keep it under 400 words
+  specs:
+    - Turn every acceptance criterion of the story into at least one scenario
+  design:
+    - Say which files change and which new files are created
+    - Put filtering and sorting logic in src/domain/ as pure functions
+    - Do not add runtime dependencies
+  tasks:
+    - Include tasks for the unit tests, the route registration and the home screen entry point when a screen is added
+    - End with running npm run typecheck and npm test
+
+# Per-operation guidance.
+operations:
+  apply:
+    guidance:
+      - Implement only what the approved proposal describes
+      - Run npm run typecheck and npm test before reporting the change as done
+  archive:
+    guidance:
+      - Archive only after the pull request is merged
