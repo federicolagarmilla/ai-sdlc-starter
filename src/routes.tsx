@@ -1,5 +1,6 @@
 import type { ReactElement } from 'react';
 import { AppointmentsScreen } from './screens/AppointmentsScreen';
+import { FindDoctorScreen } from './screens/FindDoctorScreen';
 import { HomeScreen } from './screens/HomeScreen';
 
 export interface AppRoute {
@@ -14,4 +15,5 @@ export interface AppRoute {
 export const routes: AppRoute[] = [
   { path: '/', title: 'Home', render: () => <HomeScreen /> },
   { path: '/appointments', title: 'Appointments', render: () => <AppointmentsScreen /> },
+  { path: '/find-a-doctor', title: 'Find a doctor', render: () => <FindDoctorScreen /> },
 ];

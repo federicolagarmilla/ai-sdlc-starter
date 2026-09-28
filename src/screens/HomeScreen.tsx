@@ -15,7 +15,7 @@ interface QuickAction {
 }
 
 const quickActions: QuickAction[] = [
-  { title: 'Find a doctor', description: 'Search our providers by specialty', icon: 'stethoscope' },
+  { title: 'Find a doctor', description: 'Search our providers by specialty', icon: 'stethoscope', href: '#/find-a-doctor' },
   { title: 'Test results', description: 'See your latest lab results', icon: 'flask' },
   { title: 'Appointments', description: 'Upcoming and past visits', icon: 'calendar', href: '#/appointments' },
   { title: 'Messages', description: 'Talk to your care team', icon: 'chat' },
