@@ -1,7 +1,7 @@
 # Northside Health Patient Portal (AI SDLC starter)
 
 A small healthcare web app to practice the AI-native SDLC: take work from a PRD to a merged pull
-request with the [ai-sdlc-marketplace](https://github.com/federicolagarmilla/ai-sdlc-marketplace) plugins,
+request with the ai-sdlc-marketplace plugins,
 with a person deciding at every gate.
 
 The portal shows a patient their next appointment, their primary care doctor and their appointment
@@ -14,8 +14,8 @@ history. It is deliberately unfinished: two epics are waiting in the [PRD](docs/
 
 ## Access
 
-This repository and the marketplace are private. To try them, send your email or GitHub username to the
-session presenter and you will be given read access to both.
+This repository is public. The SDLC plugins come from a separate, private marketplace: ask the session
+presenter for read access to its GitHub repository, or for the marketplace zip.
 
 ## Prerequisites
 
@@ -35,13 +35,19 @@ npm test
 
 ## Connect the SDLC plugins
 
-Open the project in Claude Code. The committed `.claude/settings.json` registers the marketplace and
-enables the six stage plugins, so Claude Code offers to install them when you trust the folder.
+**1. Add the marketplace** in Claude Code, in one of two ways:
 
-To install by hand instead:
+| From | Do this | Needs |
+|---|---|---|
+| GitHub | `/plugin marketplace add federicolagarmilla/ai-sdlc-marketplace` | Read access to the repository |
+| A folder | Unzip `ai-sdlc-marketplace-v0.2.0.zip`, then `/plugin marketplace add /full/path/to/ai-sdlc-marketplace` | Nothing else: no git, no GitHub account |
+
+The folder is the one that contains `.claude-plugin/`. Leave it where you unzipped it. For a new version,
+replace the folder with the new zip and run `/plugin marketplace update ai-sdlc-marketplace`.
+
+**2. Install the six stage plugins:**
 
 ```
-/plugin marketplace add federicolagarmilla/ai-sdlc-marketplace
 /plugin install sdlc-plan@ai-sdlc-marketplace
 /plugin install sdlc-design@ai-sdlc-marketplace
 /plugin install sdlc-build@ai-sdlc-marketplace
@@ -49,6 +55,16 @@ To install by hand instead:
 /plugin install sdlc-deploy@ai-sdlc-marketplace
 /plugin install sdlc-maintain@ai-sdlc-marketplace
 ```
+
+**Choose who gets them.** By default a plugin installs for you in every project (user scope). In the
+`/plugin` menu you can pick project scope instead (recorded in this repository's `.claude/settings.json`,
+for everyone who works in it) or local scope (only you, only in this repository). From a terminal:
+`claude plugin install sdlc-plan@ai-sdlc-marketplace --scope project`. For a whole organisation, admins
+set the marketplace and plugins in managed settings, and users cannot turn those off.
+
+This repository's `.claude/settings.json` already enables the six plugins here, so once installed they
+are on in this project. Trusting the folder does not install them: run the commands above once. If one is
+missing, Claude Code tells you it is enabled in this project but not installed.
 
 **Jira (optional): three roads.** The same agent can reach Jira in three ways; the exercises use road 1.
 

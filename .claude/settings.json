@@ -1,9 +1,4 @@
 {
-  "extraKnownMarketplaces": {
-    "ai-sdlc-marketplace": {
-      "source": { "source": "github", "repo": "federicolagarmilla/ai-sdlc-marketplace" }
-    }
-  },
   "enabledPlugins": {
     "sdlc-plan@ai-sdlc-marketplace": true,
     "sdlc-design@ai-sdlc-marketplace": true,

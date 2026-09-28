@@ -1,7 +1,7 @@
 /*
  * Design tokens. Every colour, font, radius and shadow used by the app comes from here.
  * Values are provisional (taken from the palette of the session deck). Replace them with
- * the Globant UI guidelines; app.css should not need changes.
+ * your organisation's UI guidelines; app.css should not need changes.
  */
 :root {
   /* Brand */
