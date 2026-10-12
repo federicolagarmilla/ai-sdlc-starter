@@ -53,8 +53,8 @@ Run `npm run typecheck` and `npm test` before proposing any change.
 Every change follows the same path, and a person decides at each gate:
 
 1. **Start from a story.** A Jira story with acceptance criteria (fetched with `g-p-fetch-jira-items`, or with the read-only `jira-rest` project skill when asked), a story in `.globant-skills-docs/backlog/`, or a bug report in `docs/bugs/`.
-2. **Propose before coding.** Run `/opsx:propose` to create the change in `openspec/changes/<name>/`: proposal, spec delta, design and tasks. Do not write application code during this step.
-3. **Gate: a person approves the proposal.** Only then run `/opsx:apply`.
+2. **Propose before coding.** Run `/opsx:propose` (in CODA: `/openspec-propose`) to create the change in `openspec/changes/<name>/`: proposal, spec delta, design and tasks. Do not write application code during this step.
+3. **Gate: a person approves the proposal.** Only then run `/opsx:apply` (in CODA: `/openspec-apply-change`).
 4. **Tests come with the change.** New logic in `src/domain/` gets unit tests; every acceptance criterion is covered by a test or a documented manual check.
 5. **Pull request.** Open it with `g-e-create-pr`, using `.github/pull_request_template.md`. Review it with `g-e-review-pr`. A person merges.
-6. **After merge,** run `/opsx:archive` so `openspec/specs/` describes the new behaviour.
+6. **After merge,** run `/opsx:archive` (in CODA: `/openspec-archive-change`) so `openspec/specs/` describes the new behaviour.

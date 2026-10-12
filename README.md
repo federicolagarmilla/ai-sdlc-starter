@@ -72,9 +72,16 @@ missing, Claude Code tells you it is enabled in this project but not installed.
 |---|---|---|
 | 1. Remote MCP server | Nothing extra: `sdlc-plan` bundles the Atlassian connector. Run `/mcp`, choose the Atlassian server, log in in the browser and approve (tick your site if you have more than one) | OAuth 2.1 in the browser |
 | 2. Official CLI + agent skills | Atlassian's Teamwork Graph CLI: `curl -fsSL https://teamwork-graph.atlassian.com/cli/install \| bash`, then `twg setup` (installs its skills for your agent) and `twg doctor` | OAuth 2.1 via `twg setup` |
-| 3. Your own skill + script + token | The `jira-rest` skill in `.claude/skills/`: copy `.env.example` to `.env` and add an API token (Jira Cloud) or a PAT (Data Center). `.env` is never committed | A token you store and rotate |
+| 3. Your own skill + script + token | The `jira-rest` skill in `.claude/skills/` (and `.coda/skills/` for CODA): copy `.env.example` to `.env` and add an API token (Jira Cloud) or a PAT (Data Center). `.env` is never committed | A token you store and rotate |
 
 Roads 1 and 2 never need a token: do not paste one into the connector's configuration.
+
+**CODA.** Globant's CODA installs the same marketplace: run `coda marketplace install` with the repository
+URL or the marketplace zip, turn the six plugins on in `/plugin`, then run `/reload-plugins`. The OpenSpec
+skills and `jira-rest` are also in `.coda/skills/`, so where this README says `/opsx:propose`, `/opsx:apply`
+and `/opsx:archive`, run `/openspec-propose`, `/openspec-apply-change` and `/openspec-archive-change` in CODA.
+`.coda/config.json` lets CODA show the model up to 500 characters of each skill's description, its maximum
+(the default is 200).
 
 **Other agents.** Copy the skill folders from the marketplace into your agent's skills directory, and run
 `openspec init` to add the OpenSpec commands for your agent.
